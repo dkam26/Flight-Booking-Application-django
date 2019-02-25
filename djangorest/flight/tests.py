@@ -19,6 +19,8 @@ class ModelTestCase(TestCase):
             self.flight_data,
             format="json")
 
+
+
     def test_model_can_create_a_flight(self):
         self.assertEqual(self.response.status_code, status.HTTP_201_CREATED)
 
