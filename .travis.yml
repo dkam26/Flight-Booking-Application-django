@@ -5,7 +5,7 @@ branches:
     only:
         - develop
 services:
-  - postgresql
+  - postgresql: "9.6"
 
 #To install dependences
 install:
