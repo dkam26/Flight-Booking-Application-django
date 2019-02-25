@@ -4,8 +4,8 @@ python:
 branches:
     only:
         - develop
-services:
-  - postgresql: "9.6"
+addons:
+  postgresql: "9.4"
 
 #To install dependences
 install:
