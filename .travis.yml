@@ -14,9 +14,7 @@ install:
 before_script:
   - createuser kamaradeo --createdb
   - createdb flightbooking -U kamaradeo
-  -  psql postgres -U kamaradeo
-  - \c flightbooking
-  - DROP TABLE django_migrations;
+
 
 #To run tests
 script:
