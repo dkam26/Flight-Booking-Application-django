@@ -18,7 +18,7 @@ before_script:
 
 #To run tests
 script:
-  - cd create-flight-app/
+  - cd djangorest/
   - coverage run --source=flight  manage.py test
   - coverage report -m
 
