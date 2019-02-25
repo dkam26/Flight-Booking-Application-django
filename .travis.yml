@@ -12,8 +12,8 @@ install:
   - pip install -r requirements.txt
 
 before_script:
-  - createuser deokamara --createdb
-  - createdb mytestdatabase -U deokamara
+  - createuser kamaradeo --createdb
+  - createdb mytestdatabase -U kamaradeo
 
 
 #To run tests
