@@ -14,13 +14,13 @@ install:
 before_script:
   - createuser kamaradeo --createdb
   - createdb mytestdatabase -U kamaradeo
-  - python manage.py makemigrations
-  - python manage.py migrate
 
 
 #To run tests
 script:
   - cd djangorest/
+  - python manage.py makemigrations
+  - python manage.py migrate
   - coverage run --source=flight  manage.py test
   - coverage report -m
 
