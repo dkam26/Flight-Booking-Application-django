@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'flight',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -82,7 +83,10 @@ DATABASES = {
         'USER': 'kamaradeo',
         'PASSWORD': 'masiko26',
         'HOST': 'localhost',
-        'PORT': ''
+        'PORT': '',
+        'TEST': {
+            'NAME':'text_booking',
+        }
     }
 }
 
@@ -104,6 +108,17 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    )
+}
 
 
 # Internationalization
