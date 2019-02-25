@@ -4,8 +4,8 @@ python:
 branches:
     only:
         - develop
-services:
-  - postgresql
+addons:
+  postgresql: "9.4"
 
 #To install dependences
 install:
@@ -13,7 +13,7 @@ install:
 
 before_script:
   - createuser kamaradeo --createdb
-  - createdb mytestdatabase -U kamaradeo
+  - createdb flightbooking -U kamaradeo
 
 
 #To run tests
