@@ -1,0 +1,26 @@
+language: python
+python:
+  - "3.6"
+branches:
+    only:
+        - develop
+services:
+  - postgresql
+
+#To install dependences
+install:
+  - pip install -r requirements.txt
+
+before_script:
+  - createuser deokamara --createdb
+  - createdb mytestdatabase -U deokamara
+
+
+#To run tests
+script:
+  - cd create-flight-app/
+  - coverage run --source=flight  manage.py test
+  - coverage report -m
+
+after_success:
+  - coveralls
